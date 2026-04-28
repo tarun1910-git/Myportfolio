@@ -1,0 +1,487 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<title>Tarun Ankana | Portfolio</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    scroll-behavior:smooth;
+}
+
+:root{
+    --bg:#081120;
+    --bg2:#0d1b33;
+    --card:#13233f;
+    --text:#ffffff;
+    --muted:#c7d2fe;
+    --blue:#38bdf8;
+    --blue2:#0ea5e9;
+    --shadow:0 15px 40px rgba(0,0,0,.25);
+}
+
+body.light{
+    --bg:#f8fafc;
+    --bg2:#e2e8f0;
+    --card:#ffffff;
+    --text:#111827;
+    --muted:#374151;
+    --blue:#2563eb;
+    --blue2:#1d4ed8;
+    --shadow:0 15px 40px rgba(0,0,0,.08);
+}
+
+body{
+    font-family:'Poppins',sans-serif;
+    background:linear-gradient(90deg,var(--bg),var(--bg2));
+    color:var(--text);
+    transition:.3s;
+}
+
+/* NAVBAR */
+nav{
+    position:fixed;
+    top:0;
+    width:100%;
+    padding:18px 8%;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    background:rgba(10,15,25,.55);
+    backdrop-filter:blur(12px);
+    z-index:1000;
+}
+
+body.light nav{
+    background:rgba(255,255,255,.65);
+}
+
+.logo{
+    font-size:1.4rem;
+    font-weight:800;
+    color:var(--blue);
+}
+
+nav ul{
+    display:flex;
+    gap:30px;
+    list-style:none;
+    align-items:center;
+}
+
+nav ul a{
+    color:var(--text);
+    text-decoration:none;
+    font-weight:600;
+    position:relative;
+}
+
+nav ul a::after{
+    content:'';
+    position:absolute;
+    width:0;
+    height:2px;
+    left:0;
+    bottom:-5px;
+    background:var(--blue);
+    transition:.3s;
+}
+
+nav ul a:hover::after{
+    width:100%;
+}
+
+.toggle{
+    border:none;
+    background:var(--card);
+    color:var(--text);
+    padding:10px 14px;
+    border-radius:50px;
+    cursor:pointer;
+    box-shadow:var(--shadow);
+}
+
+/* HERO */
+.hero{
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    text-align:center;
+    padding:120px 20px 80px;
+    position:relative;
+    overflow:hidden;
+}
+
+.blur{
+    position:absolute;
+    border-radius:50%;
+    filter:blur(90px);
+    opacity:.28;
+}
+
+.b1{
+    width:260px;
+    height:260px;
+    background:#38bdf8;
+    top:12%;
+    left:8%;
+}
+
+.b2{
+    width:280px;
+    height:280px;
+    background:#8b5cf6;
+    right:8%;
+    bottom:10%;
+}
+
+.hero-content{
+    position:relative;
+    z-index:2;
+}
+
+.profile{
+    width:170px;
+    height:170px;
+    border-radius:50%;
+    object-fit:cover;
+    border:4px solid var(--blue);
+    box-shadow:0 0 35px rgba(56,189,248,.45);
+    margin-bottom:25px;
+}
+
+/* FIXED LIGHT MODE ISSUE */
+.hero h1{
+    font-size:3.4rem;
+    font-weight:800;
+    color:var(--text);
+    margin-bottom:12px;
+}
+
+.hero h1 span{
+    color:var(--blue);
+}
+
+.hero p{
+    font-size:1.08rem;
+    color:var(--muted);
+    margin-bottom:28px;
+}
+
+.buttons{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    flex-wrap:wrap;
+}
+
+.btn{
+    padding:14px 28px;
+    border-radius:12px;
+    text-decoration:none;
+    font-weight:600;
+    transition:.3s;
+}
+
+.primary{
+    background:var(--blue);
+    color:white;
+    box-shadow:0 10px 25px rgba(56,189,248,.35);
+}
+
+.primary:hover{
+    transform:translateY(-4px);
+    background:var(--blue2);
+}
+
+.outline{
+    border:2px solid var(--blue);
+    color:var(--blue);
+}
+
+.outline:hover{
+    background:var(--blue);
+    color:white;
+}
+
+/* SECTION */
+section{
+    padding:95px 10%;
+}
+
+.title{
+    font-size:2rem;
+    margin-bottom:25px;
+    font-weight:800;
+    position:relative;
+}
+
+.title::before{
+    content:'';
+    width:5px;
+    height:34px;
+    background:var(--blue);
+    position:absolute;
+    left:-18px;
+    top:4px;
+    border-radius:10px;
+}
+
+/* ABOUT */
+.about p{
+    max-width:760px;
+    line-height:1.9;
+    color:var(--muted);
+    font-size:1.03rem;
+}
+
+/* PROJECTS */
+.grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:28px;
+}
+
+.card{
+    background:var(--card);
+    padding:28px;
+    border-radius:18px;
+    box-shadow:var(--shadow);
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card h3{
+    margin-bottom:12px;
+    font-size:1.25rem;
+}
+
+.card p{
+    color:var(--muted);
+    line-height:1.7;
+    margin-bottom:18px;
+}
+
+.small-btn{
+    display:inline-block;
+    padding:10px 18px;
+    background:var(--blue);
+    color:#fff;
+    border-radius:10px;
+    text-decoration:none;
+    font-size:.95rem;
+}
+
+/* SKILLS */
+.skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+}
+
+.skills span{
+    background:var(--card);
+    padding:12px 18px;
+    border-radius:50px;
+    box-shadow:var(--shadow);
+    font-weight:600;
+}
+
+/* CONTACT */
+.contact-box{
+    max-width:600px;
+}
+
+.contact-box p{
+    margin:12px 0;
+    color:var(--muted);
+    font-size:1rem;
+}
+
+/* FOOTER */
+footer{
+    text-align:center;
+    padding:25px;
+    color:var(--muted);
+}
+
+/* ANIMATION */
+.reveal{
+    opacity:0;
+    transform:translateY(40px);
+    transition:1s;
+}
+
+.reveal.active{
+    opacity:1;
+    transform:translateY(0);
+}
+
+@media(max-width:768px){
+    nav ul{
+        gap:16px;
+        font-size:.85rem;
+    }
+
+    .hero h1{
+        font-size:2.4rem;
+    }
+
+    .profile{
+        width:130px;
+        height:130px;
+    }
+
+    .title{
+        font-size:1.6rem;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<nav>
+    <div class="logo">Tarun</div>
+
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button class="toggle" onclick="toggleTheme()">🌙</button></li>
+    </ul>
+</nav>
+
+<section class="hero" id="home">
+    <div class="blur b1"></div>
+    <div class="blur b2"></div>
+
+    <div class="hero-content">
+        <img src="images/myprofile.jpg" class="profile">
+
+        <h1>Hi, I'm <span>Tarun Ankana</span></h1>
+
+        <p>B.Tech Student • Web Developer • AWS Enthusiast • Problem Solver</p>
+
+        <div class="buttons">
+            <a href="#projects" class="btn primary">View Projects</a>
+            <a href="Tarun_Ankana_Resume (4).pdf" download class="btn outline">Download Resume</a>
+        </div>
+    </div>
+</section>
+
+<section class="about reveal" id="about">
+    <h2 class="title">About Me</h2>
+
+    <p>
+        I am a B.Tech student graduating in 2026 with strong interest in full-stack development,
+        cloud computing, machine learning and scalable software systems.
+        I enjoy building practical projects that solve real-world problems and continuously improve
+        my skills in JavaScript, React, Python, AWS and databases.
+        I am actively seeking internship and entry-level opportunities.
+    </p>
+</section>
+
+<section class="reveal" id="projects">
+    <h2 class="title">Projects</h2>
+
+    <div class="grid">
+
+        <div class="card">
+            <h3>Explainable AI for Endoscopy Images</h3>
+            <p>
+                Built deep learning medical image system using Grad-CAM, Layer-CAM and LIME for transparent diagnosis support.
+            </p>
+            <a href="#" class="small-btn">GitHub</a>
+        </div>
+
+        <div class="card">
+            <h3>Rainfall Prediction Pipeline</h3>
+            <p>
+                End-to-end ML pipeline using Python + Flask with preprocessing, XGBoost model training and REST API deployment.
+            </p>
+            <a href="https://github.com/akondi-athreya/Rain_Prediction_Pipeline_Flask" class="small-btn" target="_blank">GitHub</a>
+        </div>
+
+        <div class="card">
+            <h3>AWS Serverless Sentiment Analysis</h3>
+            <p>
+                Serverless sentiment analysis platform using AWS Lambda, API Gateway and cloud-native architecture.
+            </p>
+            <a href="https://github.com/tarun1910-git/AWS-SERVERLESS-SENTIMENT-ANALYSIS" class="small-btn" target="_blank">GitHub</a>
+        </div>
+
+    </div>
+</section>
+
+<section class="reveal">
+    <h2 class="title">Skills</h2>
+
+    <div class="skills">
+        <span>HTML</span>
+        <span>CSS</span>
+        <span>JavaScript</span>
+        <span>React</span>
+        <span>Python</span>
+        <span>AWS</span>
+        <span>MongoDB</span>
+        <span>Git</span>
+    </div>
+</section>
+
+<section class="reveal" id="contact">
+    <h2 class="title">Contact</h2>
+
+    <div class="contact-box">
+        <p>Email: pavantk19@gmail.com</p>
+        <p>GitHub: github.com/tarun1910-git</p>
+        <p>LinkedIn: linkedin.com/in/yourprofile</p>
+    </div>
+</section>
+
+<footer>
+    © 2026 Tarun Ankana. All Rights Reserved.
+</footer>
+
+<script>
+/* THEME TOGGLE */
+function toggleTheme(){
+    document.body.classList.toggle("light");
+
+    const btn=document.querySelector(".toggle");
+
+    if(document.body.classList.contains("light")){
+        btn.innerHTML="☀️";
+    }else{
+        btn.innerHTML="🌙";
+    }
+}
+
+/* SCROLL REVEAL */
+const observer = new IntersectionObserver(entries=>{
+    entries.forEach(entry=>{
+        if(entry.isIntersecting){
+            entry.target.classList.add("active");
+        }
+    });
+},{threshold:0.15});
+
+document.querySelectorAll(".reveal").forEach(el=>{
+    observer.observe(el);
+});
+</script>
+
+</body>
+</html>
