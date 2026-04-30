@@ -1,112 +1,281 @@
+<!-- index.html -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width,initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Tarun Ankana | Portfolio</title>
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap">
 <link rel="stylesheet" href="style.css">
 </head>
 
 <body>
 
+<!-- NAVBAR -->
 <nav>
-<div class="logo">Tarun</div>
+    <div class="logo">Tarun</div>
 
-<ul>
-<li><a href="#home">Home</a></li>
-<li><a href="#about">About</a></li>
-<li><a href="#projects">Projects</a></li>
-<li><a href="#contact">Contact</a></li>
-<li><button class="toggle" onclick="toggleTheme()">🌙</button></li>
-</ul>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><button class="toggle" onclick="toggleTheme()">🌙</button></li>
+    </ul>
 </nav>
 
+<!-- HERO -->
 <section class="hero" id="home">
-<div class="blur b1"></div>
-<div class="blur b2"></div>
 
-<div class="hero-content">
-<img src="images/myprofile.jpg" class="profile">
+    <div class="blur b1"></div>
+    <div class="blur b2"></div>
 
-<h1>Hi, I'm <span>Tarun Ankana</span></h1>
+    <div class="hero-content">
 
-<p>B.Tech Student • Web Developer • AWS Enthusiast • Problem Solver</p>
+        <!-- LEFT SIDE -->
+        <div class="hero-left">
 
-<div class="buttons">
-<a href="#projects" class="btn primary">View Projects</a>
-<a href="Tarun_Ankana_Resume.pdf" download class="btn outline">Download Resume</a>
-</div>
-</div>
+            <p class="hero-role">FULL STACK DEVELOPER • AWS • AI BUILDER</p>
+
+            <h1>
+                Hi, I'm <span>Tarun Ankana</span>
+            </h1>
+
+            <p>
+                B.Tech student graduating in 2026 passionate about building
+                modern web applications, scalable cloud solutions, and
+                AI-powered products that solve real-world problems.
+            </p>
+
+            <div class="buttons">
+                <a href="#projects" class="btn primary">View Projects</a>
+                <a href="Tarun_Ankana_Resume.pdf" download class="btn outline">
+                    Download Resume
+                </a>
+            </div>
+
+            <div class="hero-stats">
+
+                <div class="stat">
+                    <h3>4+</h3>
+                    <span>Projects Built</span>
+                </div>
+
+                <div class="stat">
+                    <h3>2026</h3>
+                    <span>Graduate</span>
+                </div>
+
+                <div class="stat">
+                    <h3>AWS</h3>
+                    <span>Cloud Ready</span>
+                </div>
+
+            </div>
+
+        </div>
+
+        <!-- RIGHT SIDE -->
+        <div class="hero-right">
+
+            <div class="profile-card">
+
+                <span class="tag t1">Python</span>
+                <span class="tag t2">AWS</span>
+                <span class="tag t3">Flask</span>
+                <span class="tag t4">Django</span>
+                <span class="tag t5">MongoDB</span>
+
+                <img src="images/myprofile.jpg" class="profile">
+
+                <h3>Software Engineer</h3>
+                <p>Open to Internships & Entry-Level Roles</p>
+
+            </div>
+
+        </div>
+
+    </div>
+
 </section>
-
+<!-- ABOUT -->
 <section class="about reveal" id="about">
+
 <h2 class="title">About Me</h2>
 
-<p>
-I am a B.Tech student graduating in 2026 with strong interest in full-stack development,
-cloud computing, machine learning and scalable software systems.
-I enjoy building practical projects and improving my skills.
+<div class="about-wrapper">
+
+<div class="about-left">
+
+<p class="intro">
+I am a <span>B.Tech student graduating in 2026</span> with strong interest in
+software engineering, cloud technologies, and AI-powered applications.
 </p>
+
+<p>
+I enjoy building practical products that solve real-world problems — from
+responsive web applications to machine learning pipelines and scalable systems.
+</p>
+
+<p>
+My technical stack includes HTML, CSS, JavaScript, Python, Flask, AWS,
+MongoDB, Git, and modern development tools.
+</p>
+
+<p>
+Currently seeking internship and entry-level opportunities where I can
+contribute, learn fast, and grow as a software engineer.
+</p>
+
+</div>
+
+<div class="about-right">
+
+<div class="stat-card">
+<h3>4+</h3>
+<span>Projects</span>
+</div>
+
+<div class="stat-card">
+<h3>2026</h3>
+<span>Graduate</span>
+</div>
+
+<div class="stat-card">
+<h3>AWS</h3>
+<span>Cloud</span>
+</div>
+
+<div class="stat-card">
+<h3>AI/ML</h3>
+<span>Projects</span>
+</div>
+
+</div>
+
+</div>
 </section>
 
+<!-- PROJECTS -->
 <section class="reveal" id="projects">
+
 <h2 class="title">Projects</h2>
 
 <div class="grid">
 
+<!-- CARD 1 -->
 <div class="card">
-<h3>Rainfall Prediction Pipeline</h3>
-<p>       
-         End-to-end machine learning project developed using Python, Flask,
-        Scikit-learn, and XGBoost to predict rainfall using weather data.
-        Implemented data preprocessing, feature scaling, model comparison,
-        evaluation metrics, and deployed with interactive UI + REST API support.</p>
+
+<img src="images/doctor.png" class="project-img">
+
+<div class="card-content">
+<h3>Explainable AI for Endoscopy Images</h3>
+
+<p>
+AI-powered medical image analysis using deep learning with Grad-CAM,
+Layer-CAM and LIME for transparent diagnosis predictions.
 </p>
-<a href="#" class="small-btn">GitHub</a>
+
+<a href="https://github.com/tarun1910-git/Explainable-AI"
+target="_blank" class="small-btn">GitHub</a>
 </div>
 
+</div>
+
+<!-- CARD 2 -->
 <div class="card">
+
+<img src="images/Rainfall.png" class="project-img">
+
+<div class="card-content">
+<h3>Rainfall Prediction Pipeline</h3>
+
+<p>
+End-to-end machine learning pipeline using Python, Flask,
+Scikit-learn and XGBoost with REST API deployment.
+</p>
+
+<a href="https://github.com/tarun1910-git/Rain_Prediction_Pipeline_Flask"
+target="_blank" class="small-btn">GitHub</a>
+<a href="https://rain-prediction-pipeline-flask.onrender.com"
+target="_blank" class="small-btn">Live Demo</a>
+</div>
+
+</div>
+
+<!-- CARD 3 -->
+<div class="card">
+
+<img src="images/Sentiment.png" class="project-img">
+
+<div class="card-content">
 <h3>AWS Sentiment Analysis</h3>
-<p> Cloud-native sentiment analysis application built using AWS Lambda,
-        API Gateway, and serverless architecture for scalable text processing.
-        Designed backend workflow, API integration, testing, and deployment
-        using modern AWS services with low infrastructure overhead.</p>
-<a href="#" class="small-btn">GitHub</a>
+
+<p>
+Cloud-native sentiment analysis application using AWS Lambda,
+API Gateway and serverless architecture.
+</p>
+
+<a href="https://github.com/tarun1910-git/AWS-SERVERLESS-SENTIMENT-ANALYSIS"
+target="_blank" class="small-btn">GitHub</a>
 </div>
+
+</div>
+
+<!-- CARD 4 -->
 <div class="card">
-    <h3>Restaurant Feedback System</h3>
 
-    <p>
-        Responsive customer feedback website designed for restaurants to collect
-        and manage customer reviews efficiently. Implemented star rating system,
-        dynamic review cards, CRUD operations, local storage integration,
-        dark/light theme toggle, responsive layout, smooth animations,
-        and modern user-friendly interface to enhance customer engagement.
-    </p>
+<img src="images/restaurant.png" class="project-img">
 
-    <a href="https://github.com/tarun1910-git" target="_blank" class="small-btn">
-        GitHub
-    </a>
+<div class="card-content">
+<h3>Restaurant Feedback System</h3>
+
+<p>
+Responsive review platform with star ratings, CRUD reviews,
+local storage integration and premium modern UI.
+</p>
+
+<a href="https://github.com/tarun1910-git/Restaurant-Feedback"
+target="_blank" class="small-btn">GitHub</a>
+<a href="https://tarun1910-git.github.io/Restaurant-Feedback/"
+target="_blank" class="small-btn">Live Demo</a>
 </div>
+
+</div>
+
 </div>
 </section>
 
+<!-- CONTACT -->
 <section class="reveal" id="contact">
+
 <h2 class="title">Contact</h2>
 
 <div class="contact-box">
-<p>Email: <a href="mailto:pavantk19@gmail.com">pavantk19@gmail.com</a></p>
 
-<p>GitHub: <a href="https://github.com/tarun1910-git" target="_blank">
-github.com/tarun1910-git</a></p>
+<p>Email:
+<a href="mailto:pavantk19@gmail.com">
+pavantk19@gmail.com
+</a>
+</p>
 
-<p>LinkedIn: <a href="https://www.linkedin.com/in/tarun-ankana-211416258/" target="_blank">
-linkedin.com/in/tarun-ankana-211416258</a></p>
+<p>GitHub:
+<a href="https://github.com/tarun1910-git" target="_blank">
+github.com/tarun1910-git
+</a>
+</p>
+
+<p>LinkedIn:
+<a href="https://linkedin.com/in/tarun-ankana-211416258"
+target="_blank">
+linkedin.com/in/tarun-ankana-211416258
+</a>
+</p>
+
 </div>
+
 </section>
 
 <footer>
@@ -114,5 +283,6 @@ linkedin.com/in/tarun-ankana-211416258</a></p>
 </footer>
 
 <script src="script.js"></script>
+
 </body>
 </html>

@@ -1,3 +1,6 @@
+// script.js
+
+// DARK / LIGHT MODE
 function toggleTheme(){
     document.body.classList.toggle("light");
 
@@ -5,19 +8,43 @@ function toggleTheme(){
 
     if(document.body.classList.contains("light")){
         btn.innerHTML = "☀️";
+        localStorage.setItem("theme","light");
     }else{
         btn.innerHTML = "🌙";
+        localStorage.setItem("theme","dark");
     }
 }
 
-const observer = new IntersectionObserver(entries=>{
-    entries.forEach(entry=>{
-        if(entry.isIntersecting){
-            entry.target.classList.add("active");
+// LOAD SAVED THEME
+window.addEventListener("load", ()=>{
+
+    const savedTheme = localStorage.getItem("theme");
+    const btn = document.querySelector(".toggle");
+
+    if(savedTheme === "light"){
+        document.body.classList.add("light");
+        btn.innerHTML = "☀️";
+    }else{
+        btn.innerHTML = "🌙";
+    }
+
+    revealOnScroll();
+});
+
+// SCROLL REVEAL
+function revealOnScroll(){
+
+    const reveals = document.querySelectorAll(".reveal");
+
+    reveals.forEach(section=>{
+
+        const top = section.getBoundingClientRect().top;
+        const windowHeight = window.innerHeight;
+
+        if(top < windowHeight - 100){
+            section.classList.add("active");
         }
     });
-},{threshold:0.15});
+}
 
-document.querySelectorAll(".reveal").forEach(el=>{
-    observer.observe(el);
-});
+window.addEventListener("scroll", revealOnScroll);
